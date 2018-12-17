@@ -79,8 +79,10 @@ public class MyTomcat {
 		String clazz=urlServletMap.get(myRequest.getUrl());
 		
 		try {
+			@SuppressWarnings("unchecked")
 			Class<MyServlet> myServletClass=(Class<MyServlet>) Class.forName(clazz);
-			MyServlet myServlet=myServletClass.newInstance();
+			MyServlet myServlet=myServletClass.getDeclaredConstructor().newInstance();
+			myServlet.service(myRequest, myResponse);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

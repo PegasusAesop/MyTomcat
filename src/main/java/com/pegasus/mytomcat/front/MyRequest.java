@@ -45,8 +45,7 @@ public class MyRequest {
 		System.out.println("url:"+url);
 		method = httpHead.split("\\s")[0];
 		System.out.println("method:"+method);
-		
-		//System.out.println(this);
+		System.out.println(this);
 	}
 
 }
